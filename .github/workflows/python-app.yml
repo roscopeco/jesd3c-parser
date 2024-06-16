@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: pythom
+        working-directory: python
 
     steps:
     - uses: actions/checkout@v4
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: pythom
+        working-directory: python
     environment:
       name: pypi
       url: https://pypi.org/p/little-atf-programmer
@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: pythom
+        working-directory: python
 
     permissions:
       contents: write
