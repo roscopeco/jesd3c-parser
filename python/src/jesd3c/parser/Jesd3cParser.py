@@ -1678,8 +1678,8 @@ def serializedATN():
         0,
         183,
         184,
-        5,
-        25,
+        7,
+        2,
         0,
         0,
         184,
@@ -3780,6 +3780,12 @@ class Jesd3cParser(Parser):
         def HEX_NUMBER(self):
             return self.getToken(Jesd3cParser.HEX_NUMBER, 0)
 
+        def NUMBER(self):
+            return self.getToken(Jesd3cParser.NUMBER, 0)
+
+        def BINARY_NUMBER(self):
+            return self.getToken(Jesd3cParser.BINARY_NUMBER, 0)
+
         def getRuleIndex(self):
             return Jesd3cParser.RULE_fuse_cksum
 
@@ -3794,10 +3800,16 @@ class Jesd3cParser(Parser):
     def fuse_cksum(self):
         localctx = Jesd3cParser.Fuse_cksumContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_fuse_cksum)
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 183
-            self.match(Jesd3cParser.HEX_NUMBER)
+            _la = self._input.LA(1)
+            if not ((((_la) & ~0x3F) == 0 and ((1 << _la) & 58720256) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
