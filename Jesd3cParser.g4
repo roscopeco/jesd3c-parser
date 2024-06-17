@@ -109,6 +109,8 @@ fuse_checksum_field
 
 fuse_cksum
  : HEX_NUMBER
+ | NUMBER
+ | BINARY_NUMBER
  ;
  
 electrical_data_field

@@ -6,4 +6,5 @@ python/dist
 python/src/jesd3c/parser/.antlr
 java/build
 java/.gradle
-
+**/.idea
+**/*.iml

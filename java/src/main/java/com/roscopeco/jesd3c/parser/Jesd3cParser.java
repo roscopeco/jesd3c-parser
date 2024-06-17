@@ -1216,6 +1216,8 @@ public class Jesd3cParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class Fuse_cksumContext extends ParserRuleContext {
 		public TerminalNode HEX_NUMBER() { return getToken(Jesd3cParser.HEX_NUMBER, 0); }
+		public TerminalNode NUMBER() { return getToken(Jesd3cParser.NUMBER, 0); }
+		public TerminalNode BINARY_NUMBER() { return getToken(Jesd3cParser.BINARY_NUMBER, 0); }
 		public Fuse_cksumContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1233,11 +1235,20 @@ public class Jesd3cParser extends Parser {
 	public final Fuse_cksumContext fuse_cksum() throws RecognitionException {
 		Fuse_cksumContext _localctx = new Fuse_cksumContext(_ctx, getState());
 		enterRule(_localctx, 38, RULE_fuse_cksum);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(183);
-			match(HEX_NUMBER);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 58720256L) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -2701,7 +2712,7 @@ public class Jesd3cParser extends Parser {
 		"\u0005\u0016\u0000\u0000\u00b1\u00a9\u0001\u0000\u0000\u0000\u00b1\u00b0"+
 		"\u0001\u0000\u0000\u0000\u00b2#\u0001\u0000\u0000\u0000\u00b3\u00b4\u0005"+
 		"\n\u0000\u0000\u00b4\u00b5\u0003&\u0013\u0000\u00b5\u00b6\u0005\u0003"+
-		"\u0000\u0000\u00b6%\u0001\u0000\u0000\u0000\u00b7\u00b8\u0005\u0019\u0000"+
+		"\u0000\u0000\u00b6%\u0001\u0000\u0000\u0000\u00b7\u00b8\u0007\u0002\u0000"+
 		"\u0000\u00b8\'\u0001\u0000\u0000\u0000\u00b9\u00bc\u0003*\u0015\u0000"+
 		"\u00ba\u00bc\u0003,\u0016\u0000\u00bb\u00b9\u0001\u0000\u0000\u0000\u00bb"+
 		"\u00ba\u0001\u0000\u0000\u0000\u00bc)\u0001\u0000\u0000\u0000\u00bd\u00be"+
